@@ -1,0 +1,78 @@
+@media screen and (max-width: 1630px) {
+  .header-section {
+    width: 95% !important;
+  }
+  .fashion-shop-container {
+    width: 95% !important;
+  }
+  .fashion-shops {
+    gap: 30px !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .fashion-shops {
+    flex-wrap: wrap;
+  }
+  .mobile-menu {
+    width: 5% !important;
+  }
+  .nav-form {
+    width: 80% !important;
+  }
+  .nav-cart {
+    width: 15% !important;
+  }
+  .nav-form span {
+    width: 30% !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .footer-container {
+    width: 90% !important;
+  }
+  .nav-bar {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .nav-form {
+    width: 100% !important;
+    gap: 15px !important;
+  }
+  .nav-form span {
+    width: 50% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-form {
+    flex-direction: column;
+  }
+  .nav-cart {
+    justify-content: center !important;
+  }
+  .top-menu nav ul li a {
+    font-size: 13px !important;
+  }
+  .top-menu nav ul {
+    gap: 10px !important;
+  }
+  .footer-widgets nav ul {
+    gap: 10px !important;
+  }
+  .footer-widgets nav ul li a {
+    font-size: 13px !important;
+  }
+  .footer-widgets span input {
+    width: 70% !important;
+  }
+  .footer-widgets span button {
+    width: 30% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .top-menu nav ul {
+    flex-wrap: wrap;
+  }
+  .footer-widgets nav ul {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,409 @@
+@forward "./base/index";
+@use "./util/index";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+
+// All Mixin css here
+@mixin invertflexDisplay() {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+@mixin flexDisplay() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin fontSize($fontSize) {
+  @if ($fontSize == large) {
+    font-size: 70px;
+    font-weight: 500;
+    font-family: "open sans", sans-serif;
+  } @else if($fontSize == medium) {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: "open sans", sans-serif;
+  } @else if($fontSize == small) {
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "open sans", sans-serif;
+  }
+}
+
+// Maping css here
+$colors: (
+  color1: red,
+  color2: blue,
+  color3: green,
+  color4: yellow,
+  color5: orange,
+);
+@each $key, $color in $colors {
+  .#{$color}-text {
+    color: $color !important;
+  }
+}
+
+// Header Css Start
+header {
+  background-image: url("../images/juan-camilo-navia-maim4G7oRlo-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.header-container {
+  background-image: url(../images/Rectangle\ 1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 70px;
+  @include flexDisplay();
+}
+.top-menu nav ul {
+  margin: 0;
+  @include flexDisplay();
+  gap: 20px;
+  padding: 20px 0px;
+  li {
+    list-style: none;
+    a {
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 400;
+      color: #fff;
+    }
+    a:hover {
+      color: #f26522;
+    }
+  }
+}
+.header-section {
+  @include invertflexDisplay();
+  width: 1630px;
+}
+.logo {
+  @include flexDisplay();
+  padding: 30px 0px;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.header-Scontainer {
+  width: 100%;
+}
+.mobile-menu {
+  width: 10%;
+  i {
+    font-size: 35px;
+    color: #fff;
+  }
+}
+.cetagory {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  padding: 10px 25px;
+  border: none;
+  background-color: #252525;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  i {
+    font-size: 14px;
+    padding-left: 5px;
+  }
+}
+.cetagory:hover {
+  background-color: #f26522;
+  color: #fff;
+}
+.nav-form .language {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "open sans", sans-serif;
+  padding: 8px 15px;
+  background-color: #fff;
+  color: #252525;
+  border: none;
+  border-radius: 5px;
+  @include flexDisplay();
+  gap: 8px;
+  cursor: pointer;
+}
+.nav-form {
+  @include flexDisplay();
+  gap: 30px;
+  width: 70%;
+  span {
+    @include flexDisplay();
+    width: 55%;
+    i {
+      background-color: #f26522;
+      color: #fff;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 0px 5px 5px 0px;
+      cursor: pointer;
+    }
+  }
+  input {
+    background-color: #fff;
+    color: #252525;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "open sans", sans-serif;
+  }
+}
+.nav-cart {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  span {
+    @include flexDisplay();
+    gap: 5px;
+    color: #fff;
+    p {
+      font-size: 17px;
+      font-weight: 400;
+      font-family: "open sans", sans-serif;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+}
+.content {
+  @include invertflexDisplay();
+  padding-top: 200px;
+  h2 {
+    @include fontSize(large);
+    color: #fff;
+    text-align: center;
+  }
+  button {
+    @extend .cetagory;
+    padding: 15px 40px;
+  }
+}
+// Header Css End
+
+// Fashion shop css start
+.fashion-shop {
+  @include flexDisplay();
+  padding-bottom: 100px;
+}
+.fashion-shop-container {
+  width: 1630px;
+  height: 100%;
+  background-color: #fff;
+  h4 {
+    color: #252525;
+    @include fontSize(medium);
+    text-align: center;
+    padding: 30px 0px;
+  }
+}
+.fashion-shops {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+.single-fashion-shop {
+  background-color: #fff;
+  padding: 50px;
+  box-shadow: 0px 0px 20px 8px #0000000f;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease-in;
+}
+.single-fashion-shop:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 10px #00000018;
+}
+.f-img {
+  @include invertflexDisplay();
+  img {
+    width: 200px;
+    height: auto;
+  }
+}
+.f-heading {
+  @include invertflexDisplay();
+  gap: 5px;
+  h2 {
+    @include fontSize(small);
+    color: #252525;
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+    @include fontSize(small);
+    color: #f26522;
+    span {
+      color: #252525;
+    }
+  }
+}
+.f-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    @include fontSize(small);
+    color: #f26522;
+  }
+  h3 {
+    @include fontSize(small);
+    color: #252525;
+  }
+}
+.slider-arrow {
+  @include flexDisplay();
+  gap: 10px;
+  margin: 30px 0px;
+  i {
+    color: #fff;
+    font-size: 30px;
+    background-color: #f26522;
+    padding: 10px 15px;
+    border: none;
+  }
+}
+// Fashion shop css end
+
+// Electric shop css start
+.Electronic-shop {
+  @extend .fashion-shop;
+}
+.Electronic-shop-container {
+  @extend .fashion-shop-container;
+}
+.Electronic-shops {
+  @extend .fashion-shops;
+}
+.single-Electronic-shop {
+  @extend .single-fashion-shop;
+}
+.e-heading {
+  @extend .f-heading;
+}
+.e-img {
+  @extend .f-img;
+}
+.e-footer {
+  @extend .f-footer;
+}
+// Electric shop css end
+
+// Jewellery shop css start
+.Jewellery-shop {
+  @extend .fashion-shop;
+}
+.Jewellery-shop-container {
+  @extend .fashion-shop-container;
+}
+.Jewellery-shops {
+  @extend .fashion-shops;
+}
+.single-Jewellery-shop {
+  @extend .single-fashion-shop;
+}
+.j-heading {
+  @extend .f-heading;
+}
+.j-img {
+  @extend .f-img;
+}
+.j-footer {
+  @extend .f-footer;
+}
+// Jewellery shop css end
+
+// footer css Start
+footer {
+  background-color: #252525;
+  padding: 50px 0px;
+  @include flexDisplay();
+}
+.footer-container {
+  width: 900px;
+}
+.footer-widgets {
+  @include invertflexDisplay();
+  width: 100%;
+  gap: 20px;
+  span {
+    @include flexDisplay();
+    width: 100%;
+    input {
+      @include fontSize(small);
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      width: 88%;
+      outline: none;
+      padding: 10px;
+    }
+    button {
+      @include fontSize(small);
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      border-bottom: 1px solid #fff;
+      color: #f26522;
+      width: 12%;
+      outline: none;
+      padding: 10px;
+    }
+  }
+  nav ul {
+    @include flexDisplay();
+    gap: 30px;
+    padding: 20px 0px;
+    li {
+      list-style: none;
+      a {
+        @include fontSize(small);
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+  h3 {
+    @include fontSize(small);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+  }
+  p {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+    padding-top: 30px;
+    text-align: center;
+    line-height: 30px;
+  }
+}
+// footer css End
